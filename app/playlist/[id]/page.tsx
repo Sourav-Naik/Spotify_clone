@@ -14,7 +14,7 @@ import { userPlaylistState } from "@/app/atoms/userInfo";
 import ContentLoader from "@/app/components/ContentLoader";
 import { useRecoilState, useRecoilValue, useSetRecoilState } from "recoil";
 
-export default function playlistPage() {
+export default function PlaylistPage() {
   const params = useParams();
   const spotifyApi = useSpotify();
   const { data: session } = useSession();
