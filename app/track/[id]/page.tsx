@@ -16,7 +16,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import ContentLoader from "@/app/components/ContentLoader";
 
-export default function trackPage() {
+export default function Page() {
   const params = useParams();
   const spotifyApi = useSpotify();
   const playTrack = usePlayTrack();
