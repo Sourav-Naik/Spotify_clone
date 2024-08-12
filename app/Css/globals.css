@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .button {
+    @apply text-lg sm:text-xl md:text-2xl hover:scale-125 active:scale-100;
+  }
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-pop-up {
+  animation-name: pop-up;
+  animation-fill-mode: forwards;
+  animation-duration: 1s; /* Added duration */
+}
+
+.alert-container {
+  transition: opacity 1s ease-in-out;
+  opacity: 0; /* Start hidden */
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.hiddenScroll::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+.darkScroll::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+  position: relative;
+}
+.darkScroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+  visibility: hidden;
+}
+.darkScroll::-webkit-scrollbar-button {
+  display: none;
+}
+.darkScroll:hover::-webkit-scrollbar-thumb {
+  visibility: visible;
+  transition: all 0 ease 4s;
+}
+
+.customScroll::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+.customScroll::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.customScroll::-webkit-scrollbar-button {
+  display: none;
+}
+
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+/* Base Styles for the Slider */
+.widthHandler {
+  appearance: none;
+  width: 350px;
+  transform: translateX(74px);
+  position: absolute;
+  height: 99%;
+  background: transparent;
+  outline: none;
+  opacity: 0;
+  cursor: grab;
+}
+
+/* Styles for the Slider Thumb (WebKit Browsers) */
+.widthHandler::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 1px;
+  height: 100%;
+  background: white;
+  cursor: grab;
+}
+
+.widthHandler::-webkit-slider-thumb:active {
+  cursor: grabbing;
+}
+
+/* Styles for the Slider Thumb (Mozilla Browsers) */
+.widthHandler::-moz-range-thumb {
+  width: 1px;
+  height: 100%;
+  background: white;
+  cursor: grab;
+}
+
+.widthHandler::-moz-range-thumb:active {
+  cursor: grabbing;
+}
+
+/* Styles for the Slider Track (WebKit Browsers) */
+.widthHandler::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  cursor: grab;
+}
+
+.widthHandler::-webkit-slider-runnable-track:active {
+  cursor: grabbing;
+}
+
+/* Styles for the Slider Track (Mozilla Browsers) */
+.widthHandler::-moz-range-track {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  cursor: grab;
+}
+
+.widthHandler::-moz-range-track:active {
+  cursor: grabbing;
+}
+
+:root {
+  --volumeLabel: 50;
+}
+
+/* WebKit slider base track */
+.progressBar::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background: transparent;
+  border-radius: 40px;
+  cursor: pointer;
+}
+.progressBar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: relative;
+  top: -1px;
+}
+.progressBar:hover::-webkit-slider-thumb {
+  opacity: 1;
+}
+
+/* Mozilla slider base track */
+.progressBar::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  border-radius: 40px;
+  background: transparent;
+  cursor: pointer;
+}
+.progressBar::-moz-range-thumb {
+  width: 13px;
+  height: 13px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.2s;
+  position: relative;
+  top: -4px;
+}
+.progressBar:hover::-moz-range-thumb {
+  opacity: 1;
+}
+
+.volumeBar {
+  appearance: none;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white calc(var(--volumeLabel, 0) * 1%),
+    #4d4d4d calc(var(--volumeLabel, 0) * 1%),
+    #4d4d4d
+  );
+  border-radius: 40px;
+  position: relative;
+}
+
+.volumeBar:hover {
+  background: linear-gradient(
+    to right,
+    rgb(34, 197, 94) 0%,
+    rgb(34, 197, 94) calc(var(--volumeLabel, 0) * 1%),
+    gray calc(var(--volumeLabel, 0) * 1%),
+    gray 100%
+  );
+}
+
+.musicProgressBar {
+  appearance: none;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    white 0%,
+    white calc(var(--musicProgress, 0) * 1%),
+    #4d4d4d calc(var(--musicProgress, 0) * 1%),
+    #4d4d4d
+  );
+  border-radius: 40px;
+  position: relative;
+}
+
+.musicProgressBar:hover {
+  background: linear-gradient(
+    to right,
+    rgb(34, 197, 94) 0%,
+    rgb(34, 197, 94) calc(var(--musicProgress, 0) * 1%),
+    gray calc(var(--musicProgress, 0) * 1%),
+    gray 100%
+  );
+}
