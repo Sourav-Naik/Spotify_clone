@@ -7,10 +7,9 @@ import currentPlayingTrackState from "../atoms/currentPlayingTrack";
 
 const useSpotifyQueue = () => {
   const { data: session } = useSession();
-
   const setQueue = useSetRecoilState(queueItemsState);
   // @ts-ignore
-  const accessToken = session.accessToken;
+  const accessToken = session?.accessToken;
 
   const fetchQueue = useCallback(async () => {
     try {
