@@ -8,7 +8,7 @@ import useSpotify from "@/app/hooks/useSpotify";
 import ContentLoader from "@/app/components/ContentLoader";
 import AlbumsCover from "@/app/components/Cover Components/AlbumsCover";
 
-export default function page() {
+export default function Page() {
   const params = useParams();
   const spotifyApi = useSpotify();
   const { data: session } = useSession();

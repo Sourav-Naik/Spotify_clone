@@ -8,7 +8,7 @@ import { useCallback, useEffect, useState } from "react";
 import ContentLoader from "@/app/components/ContentLoader";
 import ArtistCover from "@/app/components/Cover Components/ArtistCover";
 
-export default function page() {
+export default function Page() {
   const params = useParams();
   const spotifyApi = useSpotify();
   const { data: session } = useSession();
