@@ -20,7 +20,7 @@ const scopes = [
 const params: any = {
   client_id: process.env.NEXT_PUBLIC_CLIENT_ID,
   response_type: "code",
-  redirect_uri: "http://localhost:3000/api/auth/callback/spotify",
+  redirect_uri: process.env.NEXT_PUBLIC_REDIRECT_URI,
   scope: scopes,
 };
 
