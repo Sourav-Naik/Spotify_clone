@@ -3,13 +3,13 @@ const scopes = [
   "playlist-read-private",
   "playlist-read-collaborative",
   "streaming",
-  "user-read-private",
-  "user-library-read",
   "user-top-read",
+  "user-library-read",
+  "user-read-private",
   "user-read-playback-state",
+  "user-read-recently-played",
   "user-modify-playback-state",
   "user-read-currently-playing",
-  "user-read-recently-played",
   "user-follow-read",
   "user-follow-modify",
   "user-library-modify",
@@ -24,9 +24,8 @@ const params: any = {
   scope: scopes,
 };
 
-// Construct the authorization URL
 const LOGIN_URL =
   "https://accounts.spotify.com/authorize?" +
   new URLSearchParams(params).toString();
 
-export { LOGIN_URL };
+export default LOGIN_URL;

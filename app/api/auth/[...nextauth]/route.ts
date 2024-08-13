@@ -1,7 +1,7 @@
 import NextAuth from "next-auth";
-import SpotifyProvider from "next-auth/providers/spotify";
+import LOGIN_URL from "@/lib/spotify";
 import SpotifyWebApi from "spotify-web-api-node";
-import { LOGIN_URL } from "@/lib/spotify";
+import SpotifyProvider from "next-auth/providers/spotify";
 
 const spotifyApi = new SpotifyWebApi({
   clientId: process.env.NEXT_PUBLIC_CLIENT_ID!,
